@@ -31,7 +31,7 @@
 			<?php the_tags('<span id="tag">태그 : ', ', ', '</span>'); ?>
 		</div>
 		<div id="comment">
-			<?php comments_popup_link( "댓글 달기", "댓글 <b>한 개</b>가 달려있습니다.", "댓글 <b>%개</b>가 달려있습니다.", comment_link, "" ); ?>
+			<?php comments_popup_link( "댓글 달기", "댓글 <b>한 개</b>가 달려있습니다.", "댓글 <b>%개</b>가 달려있습니다.", "comment_link", "" ); ?>
 		</div>
 
 		<?php endwhile; else: ?><?php endif; ?>

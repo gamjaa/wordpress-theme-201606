@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width">
 		<title><?php bloginfo('name'); ?><?php wp_title('::'); ?></title>
 		<meta name="title" content="<?php if(is_front_page()) echo "감자박스"; else the_title(); ?>">
+		<meta name="description" content="<?php if(is_front_page()) echo "포태토의 블로그"; else bloginfo('name'); ?>">
 		<meta name="keywords" content="<?php $posttags = get_the_tags(); if ($posttags) {   foreach($posttags as $tag) {     echo $tag->name . ', ';    } } ?>">
 		<meta property="og:title" content="<?php if(is_front_page()) echo "감자박스"; else the_title(); ?>">
 		<meta property="og:description" content="<?php if(is_front_page()) echo "포태토의 블로그"; else bloginfo('name'); ?>">
