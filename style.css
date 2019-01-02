@@ -1,9 +1,9 @@
 /*
 Theme Name: 감자박스 201605
-Theme URI: http://www.gamjabox.kr/
+Theme URI: http://www.gamjaa.com/
 Description: 2016년 5월
 Author: 포태토
-Author URI: http://www.gamjabox.kr/
+Author URI: http://www.gamjaa.com/
 Version: 0.1
 License:
 License URI:
@@ -77,7 +77,7 @@ article { flex: 1; min-width: 590px;}
 #content a:hover { color: #999485; }
 #content .wp-caption { width: 100% !important; }
 #content .aligncenter { text-align: center; }
-#content img { max-width: 100%; height: auto; margin-left: -10px; }
+#content img { max-width: 100%; height: auto; margin: auto; display: block; }
 #content .wp-caption-text { text-align: center; margin-top: 0; text-indent: 0; }
 #content iframe { max-width: 100%; }
 code { font-family: Verdana, 'Droid Sans Mono', '돋움체'; background-color: #23282d/*#B8FFFD*/; color: #eee/*#222*/; border-radius: 5px; display: inline-block; padding-right: 10px; font-size: 14px; max-width: 100%; overflow-x: auto; }
