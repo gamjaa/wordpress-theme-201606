@@ -81,7 +81,8 @@ article { flex: 1; min-width: 590px;}
 #content img { max-width: 100%; height: auto; margin: auto; display: block; }
 #content .wp-caption-text { text-align: center; margin-top: 0; text-indent: 0; }
 #content iframe { max-width: 100%; }
-code { font-family: Verdana, 'Droid Sans Mono', '돋움체'; background-color: #23282d/*#B8FFFD*/; color: #eee/*#222*/; border-radius: 5px; display: inline-block; padding-right: 10px; font-size: 14px; max-width: 100%; overflow-x: auto; }
+code { font-family: Verdana, 'Droid Sans Mono', '돋움체', sans-serif; background-color: #23282d; color: #eee; 
+	display: inline-block; box-sizing: border-box; border-radius: 5px; width: 100%; padding: 10px; overflow-x: auto; font-size: 14px; text-indent: 0;}
 pre>code { padding: 10px; line-height: 1.4; }
 
 #tag { color: #999485; font-size: 14px; }
