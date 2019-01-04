@@ -1,4 +1,4 @@
-@charset "utf-8"
+@charset "utf-8";
 /*
 Theme Name: 감자박스 201605
 Theme URI: http://www.gamjaa.com/
@@ -58,16 +58,6 @@ article { flex: 1; min-width: 590px;}
 #title h1 { font-size: 30px; text-align: center; }
 #title a { color: #000; text-decoration: none; }
 #title a:hover { color: #999485; }
-
-#cardContainer { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; width: 100%;}
-.card { flex: 1; height: 380px; line-height: 380px; display: inline-block; text-align: center; border-radius: 20px; background-position: center; background-repeat: no-repeat; background-size: 30%; font-size: 30px; }
-.blogCard { margin: 0 30px 0 30px; background-color: #FFBC78; background-image: url("./images/iconmonstr-file-24-240.png"); }
-.introduceCard { background-color: #CCA94C; background-image: url("./images/iconmonstr-user-20-240.png"); }
-.guestbookCard { background-color: #4CCCA5; background-image: url("./images/iconmonstr-pencil-8-240.png"); }
-.card:hover { cursor: pointer; }
-.card a { text-decoration: none; color: transparent; display: block; }
-.card a:hover { color: #000; }
-.card a:hover span { padding: 10px; border-radius: 20px; background-color: #B8FFFD; }
 
 #introduce { text-align: center; }
 #introduce h1 { margin-top: 0; }
