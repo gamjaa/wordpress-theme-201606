@@ -30,14 +30,6 @@ header li.active a { font-weight: bold; color: #999485; }
 header li.current_page_item, header li.current-menu-item, header li.current_page_parent { border-bottom: 2px solid black; }
 header li.current_page_item a, header li.current-menu-item a, header li.current_page_parent a { font-weight: bold; color: #999485; }
 
-#titleImg {
-	max-width: 1070px; min-width: 590px; width: 100%; height: 250px; margin: 30px auto; background-color: #FFEBD7/*B8FFFD*/; border-radius: 20px; text-align: center;
-	display: flex; align-items: center; justify-content: center;
-}
-#titleImg img { width: auto; height: 80%; border-radius: 50%; }
-body.page-template-page-introduce img.avatar { width: auto; height: 80%; border-radius: 50%; }
-/* 블로그, 방명록에서는 높이를 좀 줄이자 */
-
 #container { max-width: 1070px; min-width: 590px; display: flex; margin: auto; }
 aside { width: 250px; margin-left: 30px; margin-top: 10px; }
 aside .widget { width: 210px; background-color: #B8FFFD/*FFEBD7*/; border-radius: 20px; margin-bottom: 30px; padding: 20px; display: inline-block; }
@@ -59,18 +51,15 @@ article { flex: 1; min-width: 590px;}
 #title a { color: #000; text-decoration: none; }
 #title a:hover { color: #999485; }
 
-#introduce { text-align: center; }
-#introduce h1 { margin-top: 0; }
-
 #content { min-width: 550px; text-align: justify; padding: 20px; }
 #content p { text-indent: 10px; line-height: 1.8; }
 #content a { color: #CCA94C; }
 #content a:hover { color: #999485; }
-#content .wp-caption { width: 100% !important; }
-#content .aligncenter { text-align: center; }
 #content img { max-width: 100%; height: auto; margin: auto; display: block; }
+#content .wp-caption { width: 100% !important; }
 #content .wp-caption-text { text-align: center; margin-top: 0; text-indent: 0; }
 #content iframe { max-width: 100%; }
+#content .aligncenter { text-align: center; }
 code { font-family: Verdana, 'Droid Sans Mono', '돋움체', sans-serif; background-color: #23282d; color: #eee; 
 	display: inline-block; box-sizing: border-box; border-radius: 5px; width: 100%; padding: 10px; overflow-x: auto; font-size: 14px; text-indent: 0;}
 pre>code { padding: 10px; line-height: 1.4; }
@@ -78,8 +67,6 @@ pre>code { padding: 10px; line-height: 1.4; }
 #tag { color: #999485; font-size: 14px; }
 
 #comment { margin: 20px; }
-.page-template-page-blank #comment { max-width: 750px; text-align: justify; margin: 0 auto; }
-.page-template-page-blank #comment h3#comments { display: none; }
 #comment a { color: #CCA94C; text-decoration: none; }
 #comment a.comment_link { text-decoration: none; font-weight: bold; color: #999485; }
 #comment .commentlist { list-style: none; margin-left: -20px; }
@@ -119,3 +106,4 @@ img {border: 0;}
 img.alignright {float:right; margin:0 0 1em 1em}
 img.alignleft {float:left; margin:0 1em 1em 0}
 img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+.roundborder img {width: auto; height: 80%; border-radius: 50%;}

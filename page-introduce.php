@@ -5,12 +5,9 @@
 ?>
 <?php get_header(); ?>
 <article>
-		<div id="introduce">
-			<?php echo get_avatar( 'potato93@daum.net', 256 ); ?>
-			<h1>포태토</h1>
-			재미있는 사람이 되고픈 진지한 사람.<br>
-			게임 개발자를 꿈꾸며, 오늘도 딴짓 중.<br><br>
-			<img src="<?= get_template_directory_uri() ?>/images/address.png">
-		</div>
+	<?php 
+		the_post();
+		the_content();
+	?>
 </article>
 <?php get_footer(); ?>
