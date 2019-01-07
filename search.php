@@ -1,58 +1,34 @@
 <?php get_header(); ?>
 <div id="container">
-	<article>
-		<?php printf( __( '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\'<b>%s</b>\'에 대한 검색 결과 :'), get_search_query() );?>
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<div id="title"><h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-		<span class="category">
-			<?php the_category(', '); ?> |
-		</span>
-		<span class="date">
-			<?php echo get_the_date(); ?> <?php echo get_the_time(); ?>
-		</span>
-		</div>
-		<div id="content">
-			<?php
-			$tags = get_the_tags();
-			if($tags) foreach ($tags as $tag) if($tag->name == "광고포함") echo
-			'
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- 반응형 -->
-			<ins class="adsbygoogle"
-				 style="display:block"
-				 data-ad-client="ca-pub-9422978281782094"
-				 data-ad-slot="1450533311"
-				 data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			';
-			?>
-			<?php the_content(); ?>
-			<?php
-			$tags = get_the_tags();
-			if($tags) foreach ($tags as $tag) if($tag->name == "광고포함") echo
-			'
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- 반응형 -->
-			<ins class="adsbygoogle"
-				 style="display:block"
-				 data-ad-client="ca-pub-9422978281782094"
-				 data-ad-slot="1450533311"
-				 data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			';
-			?>
-			<?php the_tags('<span id="tag">태그 : ', ', ', '</span>'); ?>
-		</div>
-		<div id="comment">
-			<?php comments_popup_link( "댓글 달기", "댓글 <b>한 개</b>가 달려있습니다.", "댓글 <b>%개</b>가 달려있습니다.", comment_link, "" ); ?>
-		</div>
+	<div id="posts_wrapper">
+		<?php
+			get_search_form();
+			global $wp_query;
+			$total_results = $wp_query->found_posts;
+		?>		
+		<small>검색 결과 총 <?= $total_results ?>건</small>
 
-		<?php endwhile; else: ?><?php endif; ?>
-		<div id="pageNum">
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<article id="<?= get_the_ID() ?>">
+			<header>
+				<h1><a href="<?= get_permalink() ?>" class="none_deco"><?= get_the_title() ?></a></h1>
+				<span class="category"><?php the_category(', '); ?> | </span>
+				<span class="date"><?= get_the_date(); ?> <?= get_the_time(); ?></span>
+
+				<?php if (has_post_thumbnail()) : ?>
+					<a href="<?= get_permalink() ?>" title="<?= get_the_title() ?>" class="thumb">
+						<img src="<?php the_post_thumbnail_url('medium_large'); ?>"/>
+					</a>
+				<?php endif; ?>
+			</header>
+
+			<a href="<?= get_permalink() ?>" title="계속 읽기" class="none_deco"><?php the_excerpt(); ?></a>
+
+			<a href="<?= get_permalink() ?>" class="more none_deco">계속 읽기</a>
+		</article>
+		<?php endwhile; endif; ?>
+
+		<div id="pagination">
 			<?php
 			  global $wp_query;
 			  $big = 999999999;
@@ -67,11 +43,10 @@
 			  ) );
 			?>
 		</div>
-	</article>
+	</div>
 
-	<aside>
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Left Sidebar") ) : ?>
-		<?php endif; ?>
-	</aside><!-- sidebar 끝 -->
+	<nav>
+		<?php dynamic_sidebar(); ?>
+	</nav>
 </div>
 <?php get_footer(); ?>

@@ -4,10 +4,10 @@
   */
 ?>
 <?php get_header(); ?>
-<article>
+<div id="container" style="display: block">
 	<?php 
 		the_post();
 		the_content();
 	?>
-</article>
+</div>
 <?php get_footer(); ?>

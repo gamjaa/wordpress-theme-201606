@@ -1,15 +1,53 @@
-<?php get_header(); ?>
+<?= get_header() ?>
 <div id="container">
-	<article>
-		<div id="title"><h1><?php echo get_cat_name($cat); ?></h1></div>
-                        <div id="content">
-		<?php echo do_shortcode("[catlist categorypage='yes'  comments=yes date=yes date_tag=span pagination=yes numberposts=20 pagination_prev='«' pagination_next='»']");?>
-                        </div>
-	</article><!-- content 끝 -->
+	<div id="posts_wrapper">
+		<article>
+			<?php
+				$paged = get_query_var('paged', 1);
+				$query = new WP_Query(array(
+					'cat' => $cat,
+					'posts_per_page' => 20,
+					'paged' => $paged
+				));
+			?>
+			<header>
+				<h1><?= get_cat_name($cat) ?> <small>(총 <?= $query->found_posts ?>개)</small></h1>
+			</header>
 
-	<aside>
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Left Sidebar") ) : ?>
-		<?php endif; ?>
-	</aside><!-- sidebar 끝 -->
-</div><!-- body 끝 -->
-<?php get_footer(); ?>
+			<ul id="catlist">
+			<?php
+				while ($query->have_posts()) :
+					$query->the_post();
+			?>
+				<li>
+					<a href="<?= get_permalink() ?>" class="none_deco"><?= get_the_title() ?></a>
+					(<?= get_comments_number() ?>)
+					<span><?= get_the_date() ?></span>
+				</li>
+			<?php
+				endwhile;
+			?>
+			</ul>
+		</article>
+
+		<div id="pagination">
+			<?php
+				$big = 999999999;
+				echo paginate_links( array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $query->max_num_pages,
+				'type' => 'list',
+				'prev_text'          => __('«'),
+				'next_text'          => __('»'),
+				) );
+			?>
+		</div>
+	</div>
+
+	<nav>
+		<?php dynamic_sidebar(); ?>
+	</nav>
+</div>
+<?= get_footer() ?>

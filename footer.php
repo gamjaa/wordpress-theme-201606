@@ -4,8 +4,5 @@
 		<a href="/feed" target="_blank"><img src="<?= get_template_directory_uri() ?>/images/iconmonstr-rss-feed-4-240.png"></a>
 	</footer>
 
-		<?php wp_footer(); ?>
-<!-- &#45348;&#51060;&#48260; &#50937;&#47196;&#44536; -->
-<script>document.body.style.minHeight = screen.height + "px";</script>
-	</body>
+	<?php wp_footer(); ?>
 </html>

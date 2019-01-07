@@ -1,6 +1,6 @@
 <?php
   /*
-    Template Name: 빈 페이지
+    Template Name: 에러 페이지
   */
 ?>
 <?php get_header(); ?>
