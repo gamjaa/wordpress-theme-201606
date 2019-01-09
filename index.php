@@ -10,7 +10,7 @@
 
 				<?php if (has_post_thumbnail()) : ?>
 					<a href="<?= get_permalink() ?>" title="<?= get_the_title() ?>" class="thumb">
-						<img src="<?php the_post_thumbnail_url('medium_large'); ?>"/>
+						<img src="<?= get_the_post_thumbnail_url(null, 'medium_large'); ?>" class="thumb_img" onload="imgMove(this)">
 					</a>
 				<?php endif; ?>
 			</header>
@@ -20,6 +20,14 @@
 			<a href="<?= get_permalink() ?>" class="more none_deco">계속 읽기</a>
 		</article>
 		<?php endwhile; endif; ?>
+
+		<script>
+			function imgMove(img) {
+				if (img.height > 300) {
+					img.style.marginTop = `-${img.height / 2 - 150}px`;
+				}
+			}
+		</script>
 
 		<div id="pagination">
 			<?php

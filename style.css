@@ -52,7 +52,7 @@ article > header { min-width: 590px; text-align: right; }
 article > header h1 { margin: 0 0 20px 0; color: #000; font-size: 30px; text-align: center; word-break: keep-all; }
 article > header span { color: #999; }
 article > header span a { color: inherit; text-decoration: none; }
-article a.thumb { width: 100%; max-height: 300px; overflow: hidden; margin-top: 20px; display: block; border-radius: 20px; }
+article a.thumb { width: 100%; max-height: 300px; overflow: hidden; margin-top: 20px; display: block; border: 1px solid #EEE; border-radius: 20px; }
 article a.thumb img { width: 100%; height: 100%; }
 
 article a.more { width: 100px; line-height: 35px; margin-top: 20px; display: block; border-radius: 5px; 
@@ -75,7 +75,7 @@ pre code { padding: 10px; line-height: 1.4; }
 #comment a.comment_link { text-decoration: none; font-weight: bold; color: #999485; }
 #comment .commentlist { list-style: none; margin-left: -20px; }
 #comment .children { margin-top: 10px; list-style-image: url('/wp/wp-content/themes/WP_201605/images/iconmonstr-arrow-28-24.png'); }
-#comment .comment-author { color: #fff; }
+#comment .comment-author { color: #FFF; }
 #comment .avatar { border-radius: 50%; vertical-align: bottom; }
 #comment .fn { font-style: normal; font-weight: bold; color: #000; }
 #comment .fn a { color: #999485; }
@@ -89,7 +89,7 @@ pre code { padding: 10px; line-height: 1.4; }
 	width: 40px; line-height: 40px; display: inline-block; margin: 0 10px 0 10px !important; text-align: center; border: none !important; padding: 0 !important;
 }
 #pagination span, #pagination a, .lcp_currentpage, .lcp_paginator li a { background-color: #FFBC78; font-size: 20px; border-radius: 50%; display: block; }
-#pagination span.dots { background-color: #fff; }
+#pagination span.dots { background-color: #FFF; }
 #pagination span.current, #pagination a:hover, .lcp_currentpage, .lcp_paginator li a:hover { background-color: #999485; color: #B8FFFD; font-weight: bold; }
 #pagination a, .lcp_paginator li a { color: #000; text-decoration: none; }
 
@@ -119,7 +119,7 @@ nav { width: 250px; margin-left: 30px; }
 #searchform > div { display: flex; width: 100%; }
 #searchform #s { flex: 1; border: 1px solid #CCA94C; border-radius: 5px; padding-left: 5px; padding-right: 5px; }
 #searchform #s:hover, #searchform #s:active, #searchform #s:focus { border-color: #999485; }
-#searchform #searchsubmit { width: 60px; height: 30px; margin-left: 10px; color: #fff; background-color: #CCA94C; border: 0; border-radius: 5px; }
+#searchform #searchsubmit { width: 60px; height: 30px; margin-left: 10px; color: #FFF; background-color: #CCA94C; border: 0; border-radius: 5px; }
 #searchform #searchsubmit:hover { background-color: #999485; cursor: pointer; }
 
 /* 에러 페이지 */
