@@ -17,7 +17,7 @@
 
 				<?php if (has_post_thumbnail()) : ?>
 					<a href="<?= get_permalink() ?>" title="<?= get_the_title() ?>" class="thumb">
-						<img src="<?= get_the_post_thumbnail_url(null, 'medium_large'); ?>" class="thumb_img" onload="imgMove(this)">
+						<img src="<?= get_the_post_thumbnail_url(null, 'medium_large'); ?>" class="thumb_img" onload="setThumbPosition(this)">
 					</a>
 				<?php endif; ?>
 			</header>
@@ -28,29 +28,36 @@
 		</article>
 		<?php endwhile; endif; ?>
 
-		<script>
-			function imgMove(img) {
-				if (img.height > 300) {
-					img.style.marginTop = `-${img.height / 2 - 150}px`;
-				}
-			}
-		</script>
-
 		<div id="pagination">
 			<?php
 			  global $wp_query;
 			  $big = 999999999;
 			  echo paginate_links( array(
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var('paged') ),
-				'total' => $wp_query->max_num_pages,
-				'type' => 'list',
-				'prev_text'          => __('«'),
-				'next_text'          => __('»'),
-			  ) );
-			?>
+				  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				  'format' => '?paged=%#%',
+				  'current' => max( 1, get_query_var('paged') ),
+				  'total' => $wp_query->max_num_pages,
+				  'type' => 'list',
+				  'prev_text'          => __('«'),
+				  'next_text'          => __('»'),
+				  ) );
+				  ?>
 		</div>
+
+		<script>
+			function setThumbPosition(img) {
+				if (img.height > 300) {
+					img.style.marginTop = `-${img.height / 2 - 150}px`;
+				}
+			}
+
+			window.onload = () => {
+				const pageNumbers = document.getElementsByClassName('page-numbers');
+				for (let i = 1; i < pageNumbers.length; i++) {
+					pageNumbers[i].style.lineHeight = `${pageNumbers[i].clientHeight}px`;
+				}
+			}
+		</script>
 	</div>
 
 	<nav>
