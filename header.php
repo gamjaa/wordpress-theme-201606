@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<?= is_allow_robots() ? '' : "<meta name='robots' content='noindex,follow' />\n" ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<title><?= get_bloginfo('name') ?><?php wp_title('::') ?></title>
 
 		<?php if (is_single()) the_post(); ?>

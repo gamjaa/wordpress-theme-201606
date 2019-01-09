@@ -17,7 +17,7 @@ body { margin: 0; background-color: #FFF;
     font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", "나눔바른고딕", "NanumBarunGothic", "나눔고딕", "NanumGothic", sans-serif;
 	font-size: 16px; color: #444;}
 	
-body > header { text-align: center; overflow: hidden; min-width: 590px; }
+body > header { text-align: center; overflow: hidden; }
 body > header ul { padding: 0; list-style: none; }
 body > header li {
 	width: 100px; line-height: 50px; display: inline-block; margin: 0 10px 0 10px;
@@ -30,17 +30,23 @@ body > header li.active a { font-weight: bold; color: #999485; }
 body > header li.current_page_item, header li.current-menu-item, header li.current_page_parent { border-bottom: 2px solid black; }
 body > header li.current_page_item a, header li.current-menu-item a, header li.current_page_parent a { font-weight: bold; color: #999485; }
 
-body > footer { text-align: center; margin: 30px auto; min-width: 590px;}
-body > footer img { width: 70px; height: auto; margin: 0 15px 0 15px; }
+body > footer { text-align: center; }
+body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 15px; }
 
-#container { max-width: 1070px; min-width: 590px; display: flex; margin: auto; }
+#container { max-width: 1070px; display: flex; margin: auto; }
+#posts_wrapper { flex: 1; margin-left: 20px; margin-right: 20px; margin-bottom: 30px; }
+@media (max-width: 880px) {
+	#container { flex-direction: column; }
+	nav { margin-left: 20px; margin-right: 20px; box-sizing: border-box; }
+}
+@media (min-width: 881px) {
+	nav { width: 250px; margin-left: 30px; }
+}
 
 /* 포스트 */
-#posts_wrapper { flex: 1; margin-left: 20px; margin-right: 20px; }
-
 article { 
 	border-bottom: 1px dotted #CCA94C;
-	min-width: 590px; text-align: justify; 
+	text-align: justify; 
 	padding-top: 20px; padding-bottom: 20px; 
 }
 article a { color: #CCA94C; }
@@ -48,8 +54,8 @@ article a:hover { color: #999485; }
 article a.none_deco { color: inherit; text-decoration: none; }
 article a.none_deco:hover { color: #999485; }
 
-article > header { min-width: 590px; text-align: right; }
 article > header h1 { margin: 0 0 20px 0; color: #000; font-size: 30px; text-align: center; word-break: keep-all; }
+article > header { text-align: right; }
 article > header span { color: #999; }
 article > header span a { color: inherit; text-decoration: none; }
 article a.thumb { width: 100%; max-height: 300px; overflow: hidden; margin-top: 20px; display: block; border: 1px solid #EEE; border-radius: 20px; }
@@ -84,21 +90,18 @@ pre code { padding: 10px; line-height: 1.4; }
 .adsbygoogle { margin-top: 20px; }
 
 /* 페이지 버튼 */
-#pagination ul, .lcp_paginator { padding: 0; list-style: none; text-align: center; }
-#pagination li, .lcp_paginator li {
-	width: 40px; line-height: 40px; display: inline-block; margin: 0 10px 0 10px !important; text-align: center; border: none !important; padding: 0 !important;
+#pagination ul { max-width: 100%; padding: 0; list-style: none; text-align: center; cursor: default; }
+#pagination li {
+	max-width: 8vw; max-height: 8vw; width: 40px; height: 40px; display: inline-block; margin: 0 10px 0 10px; text-align: center; border: none; padding: 0;
 }
-#pagination span, #pagination a, .lcp_currentpage, .lcp_paginator li a { background-color: #FFBC78; font-size: 20px; border-radius: 50%; display: block; }
+#pagination li::before { vertical-align: middle; }
+#pagination a { color: #000; text-decoration: none; }
+#pagination a, #pagination span.current { width: 100%; height: 100%; line-height: calc(100% - 1px); background-color: #FFBC78; font-size: 20px; border-radius: 50%; display: block; }
 #pagination span.dots { background-color: #FFF; }
-#pagination span.current, #pagination a:hover, .lcp_currentpage, .lcp_paginator li a:hover { background-color: #999485; color: #B8FFFD; font-weight: bold; }
-#pagination a, .lcp_paginator li a { color: #000; text-decoration: none; }
+#pagination a:hover, #pagination span.current { background-color: #999485; color: #B8FFFD; font-weight: bold; }
 
 /* 사이드 바 */
-nav { width: 250px; margin-left: 30px; }
-.widget { width: 210px; background-color: #B8FFFD/*FFEBD7*/; border-radius: 20px; margin-bottom: 30px; padding: 20px; display: inline-block; }
-@media screen and (max-width: 880px) {
-    nav { display: none; }
-}
+.widget { width: 100%; background-color: #B8FFFD; border-radius: 20px; margin-bottom: 30px; padding: 20px; display: block; box-sizing: border-box; }
 .widget h3 { color: #999485; margin: 0; }
 .widget ul { margin: 0; }
 .widget ul li { list-style: none; margin-left: -20px; color: #CCA94C; }
