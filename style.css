@@ -46,7 +46,7 @@ body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 
 /* 포스트 */
 article { 
 	border-bottom: 1px dotted #CCA94C;
-	text-align: justify; 
+	text-align: left; 
 	padding-top: 20px; padding-bottom: 20px; 
 }
 article a { color: #CCA94C; }
@@ -104,7 +104,7 @@ pre code { padding: 10px; line-height: 1.4; }
 .widget { width: 100%; background-color: #B8FFFD; border-radius: 20px; margin-bottom: 30px; padding: 20px; display: block; box-sizing: border-box; }
 .widget h3 { color: #999485; margin: 0; }
 .widget ul { margin: 0; }
-.widget ul li { list-style: none; margin-left: -20px; color: #CCA94C; }
+.widget ul li { list-style: none; margin-left: -20px; margin-top: 8px; color: #CCA94C; }
 .widget a { color: #444; text-decoration: none; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .widget a:hover { color: #999485; }
 .widget .cat-item a { display: inline; }
