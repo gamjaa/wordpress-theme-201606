@@ -126,11 +126,11 @@ pre code { padding: 10px; line-height: 1.4; }
 #searchform #searchsubmit:hover { background-color: #999485; cursor: pointer; }
 
 /* 에러 페이지 */
-#err {margin: auto;}
-.smile {width: 100px; height: 100px; border-radius: 50em; background: #ECD078; text-align: center; line-height: 100px; font-size: 50px; font-weight: bold; font-family: sans-serif;  float: left; margin: 50px;}
-.error404 .msg {max-width: 550px; margin-top: 50px; margin-bottom: 30px; font-size: 25px; line-height: 160%; float: right;}
-.error404 .msg .impact {font-weight: bold; color: red;}
-.error404 .msg a {text-decoration: none;}
+#err { max-width: 650px; margin: auto; }
+.smile { width: 100px; height: 100px; border-radius: 50px; background: #ECD078; text-align: center; line-height: 100px; font-size: 50px; font-weight: bold; font-family: sans-serif;  float: left; }
+.error404 .msg { font-size: 25px; line-height: 160%; float: right; }
+.error404 .msg .impact { font-weight: bold; color: red; }
+.error404 .msg a { text-decoration: none; }
 
 /* 기타 */
 img {border: 0;}
