@@ -68,7 +68,7 @@ article a.more:hover { background-color: #999485; color: #FFF; }
 article p { text-indent: 10px; line-height: 1.8; margin: 20px 0 0 0; }
 article img { max-width: 100%; height: auto; margin: auto; display: block; }
 article .wp-caption { width: 100% !important; }
-article .wp-caption-text { text-align: center; margin-top: 0; text-indent: 0; }
+article .wp-caption-text, figcaption { text-align: center; text-indent: 0; color: #999; }
 article iframe { max-width: 100%; }
 article .aligncenter { text-align: center; }
 article code { font-family: Verdana, 'Droid Sans Mono', '돋움체', sans-serif; background-color: #23282d; color: #EEE; 
