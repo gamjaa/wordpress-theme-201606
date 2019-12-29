@@ -45,9 +45,12 @@
 
 		if (is_single()) {
 			$categories = get_the_category($post->ID);
-			if ($cat != 5 && $categories[0]->term_id != 5) {
-				return true;
+			// 카테고리가 일상으로만 설정돼있으면 로봇 차단
+			if (count($categories) == 1 && $categories[0]->term_id == 5) {
+				return false;
 			}
+
+			return true;
 		}
 
 		return false;
