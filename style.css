@@ -71,6 +71,7 @@ article .wp-caption { width: 100% !important; }
 article .wp-caption-text, figcaption { text-align: center; text-indent: 0; color: #999; }
 article iframe { max-width: 100%; }
 article .aligncenter { text-align: center; }
+article hr { border-style: none none dotted; border-width: 2px; border-color: #999; }
 article code { font-family: Verdana, 'Droid Sans Mono', '돋움체', sans-serif; background-color: #23282d; color: #EEE; 
 	box-sizing: border-box; border-radius: 5px; padding: 3px; font-size: 14px; text-indent: 0;}
 pre code { padding: 10px; line-height: 1.4; overflow-x: auto; display: block; }
