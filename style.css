@@ -72,8 +72,8 @@ article .wp-caption-text, figcaption { text-align: center; text-indent: 0; color
 article iframe { max-width: 100%; }
 article .aligncenter { text-align: center; }
 article code { font-family: Verdana, 'Droid Sans Mono', '돋움체', sans-serif; background-color: #23282d; color: #EEE; 
-	display: inline-block; box-sizing: border-box; border-radius: 5px; width: 100%; padding: 10px; overflow-x: auto; font-size: 14px; text-indent: 0;}
-pre code { padding: 10px; line-height: 1.4; }
+	box-sizing: border-box; border-radius: 5px; padding: 3px; font-size: 14px; text-indent: 0;}
+pre code { padding: 10px; line-height: 1.4; overflow-x: auto; display: block; }
 
 #tag { color: #999485; font-size: 14px; margin-top: 20px; display: inline-block; }
 
