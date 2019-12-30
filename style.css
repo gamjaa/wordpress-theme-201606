@@ -38,9 +38,11 @@ body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 
 @media (max-width: 880px) {
 	#container { flex-direction: column; }
 	nav { margin-left: 20px; margin-right: 20px; box-sizing: border-box; }
+	.pc_ad { display: none; }
 }
 @media (min-width: 881px) {
 	nav { width: 250px; margin-left: 30px; }
+	.mobile_ad { display: none; }
 }
 
 /* 포스트 */
