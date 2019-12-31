@@ -34,7 +34,7 @@ body > footer { text-align: center; }
 body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 15px; }
 
 #container { max-width: 1070px; display: flex; margin: auto; }
-#posts_wrapper { flex: 1; margin-left: 20px; margin-right: 20px; margin-bottom: 30px; }
+#posts_wrapper { flex: 1; margin-left: 10px; margin-right: 10px; margin-bottom: 30px; }
 @media (max-width: 880px) {
 	#container { flex-direction: column; }
 	nav { margin-left: 20px; margin-right: 20px; box-sizing: border-box; }
@@ -69,6 +69,7 @@ article a.more:hover { background-color: #999485; color: #FFF; }
 
 article p { text-indent: 10px; line-height: 1.8; margin: 20px 0 0 0; }
 article img { max-width: 100%; height: auto; margin: auto; display: block; }
+article figure[class|="wp-block"] { margin-left: 10px; margin-right: 10px; }
 article .wp-caption { width: 100% !important; }
 article .wp-caption-text, figcaption { text-align: center; text-indent: 0; color: #999; }
 article iframe { max-width: 100%; }
@@ -89,8 +90,6 @@ pre code { padding: 10px; line-height: 1.4; overflow-x: auto; display: block; }
 #comment .fn { font-style: normal; font-weight: bold; color: #0D0D0D; }
 #comment .fn a { color: #999485; }
 #comment .comment-meta a { font-size: 14px; }
-
-.adsbygoogle { margin-top: 20px; }
 
 /* 페이지 버튼 */
 #pagination ul { max-width: 100%; padding: 0; list-style: none; text-align: center; cursor: default; }
