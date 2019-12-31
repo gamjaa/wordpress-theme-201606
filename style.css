@@ -85,7 +85,7 @@ pre code { padding: 10px; line-height: 1.8; overflow-x: auto; display: block; }
 #comment a.comment_link { text-decoration: none; font-weight: bold; color: #999485; }
 #comment .commentlist { list-style: none; margin-left: -30px; }
 #comment .children { margin-top: 10px; margin-left: -10px; list-style-image: url('./images/iconmonstr-arrow-28-24.png'); }
-#comment .comment-author { color: #FFF; }
+#comment .comment-author { color: #FFF; line-height: 32px; }
 #comment .avatar { border-radius: 50%; vertical-align: bottom; }
 #comment .fn { font-style: normal; font-weight: bold; color: #0D0D0D; }
 #comment .fn a { color: #999485; }
