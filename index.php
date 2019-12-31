@@ -1,4 +1,18 @@
 <?= get_header() ?>
+<script>
+	function setThumbPosition(img) {
+		if (img.height > 300) {
+			img.style.marginTop = `-${img.height / 2 - 150}px`;
+		}
+	}
+
+	window.onload = () => {
+		const pageNumbers = document.getElementsByClassName('page-numbers');
+		for (let i = 1; i < pageNumbers.length; i++) {
+			pageNumbers[i].style.lineHeight = `${pageNumbers[i].clientHeight}px`;
+		}
+	}
+</script>
 <div id="container">
 	<div id="posts_wrapper">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -36,21 +50,6 @@
 				) );
 			?>
 		</div>
-		
-		<script>
-			function setThumbPosition(img) {
-				if (img.height > 300) {
-					img.style.marginTop = `-${img.height / 2 - 150}px`;
-				}
-			}
-
-			window.onload = () => {
-				const pageNumbers = document.getElementsByClassName('page-numbers');
-				for (let i = 1; i < pageNumbers.length; i++) {
-					pageNumbers[i].style.lineHeight = `${pageNumbers[i].clientHeight}px`;
-				}
-			}
-		</script>
 	</div>
 
 	<nav>
