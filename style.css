@@ -15,7 +15,7 @@ Text Domain: gamjaa
 /* 기본 레이아웃 */
 body { margin: 0; background-color: #FFF;
     font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", "나눔고딕", "NanumGothic", sans-serif;
-	font-size: 17px; color: #141414;}
+	font-size: 17px; color: #333333;}
 	
 body > header { text-align: center; overflow: hidden; }
 body > header ul { padding: 0; list-style: none; }
