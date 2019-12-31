@@ -14,8 +14,8 @@ Text Domain: gamjaa
 
 /* 기본 레이아웃 */
 body { margin: 0; background-color: #FFF;
-    font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", "나눔바른고딕", "NanumBarunGothic", "나눔고딕", "NanumGothic", sans-serif;
-	font-size: 16px; color: #141414;}
+    font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", "나눔고딕", "NanumGothic", sans-serif;
+	font-size: 17px; color: #141414;}
 	
 body > header { text-align: center; overflow: hidden; }
 body > header ul { padding: 0; list-style: none; }
@@ -74,11 +74,10 @@ article figure.wp-embed-aspect-16-9 * { max-height: calc(100vw / 16 * 9); }
 article .wp-caption { width: 100% !important; }
 article .wp-caption-text, figcaption { text-align: center; text-indent: 0; color: #999; }
 article iframe { max-width: 100%; }
-article .aligncenter { text-align: center; }
 article hr { border-style: none none dotted; border-width: 2px; border-color: #999; }
 article code { font-family: Verdana, 'Droid Sans Mono', '돋움체', sans-serif; background-color: #23282d; color: #EEE; 
-	box-sizing: border-box; border-radius: 5px; padding: 3px; font-size: 14px; text-indent: 0;}
-pre code { padding: 10px; line-height: 1.4; overflow-x: auto; display: block; }
+	box-sizing: border-box; border-radius: 5px; padding: 3px; font-size: 17px; text-indent: 0;}
+pre code { padding: 10px; line-height: 1.8; overflow-x: auto; display: block; }
 
 #tag { color: #999485; font-size: 14px; margin-top: 20px; display: inline-block; }
 
