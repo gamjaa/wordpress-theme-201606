@@ -21,7 +21,7 @@
 		<meta name="twitter:site" content="@_gamjaa">
 
 		<link rel="canonical" href="<?= is_single() ? get_the_permalink() : '' ?>">
-		<link rel="stylesheet" href="<?= get_bloginfo('stylesheet_url') ?>?ver=20191230">
+		<link rel="stylesheet" href="<?= get_bloginfo('stylesheet_url') ?>?ver=20200110">
 		<link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name') ?>" href="<?= get_bloginfo('rss2_url') ?>">
 		<?php wp_site_icon() ?>
 		
