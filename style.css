@@ -170,7 +170,7 @@ p[class|="comment"] > input:hover, p[class|="comment"] > textarea:hover { border
 
 /* 검색 */
 #searchform > div { display: flex; width: 100%; }
-#searchform #s { flex: 1; border: 1px solid #CCA94C; border-radius: 5px; padding-left: 5px; padding-right: 5px; }
+#searchform #s { flex: 1; min-width: 0; border: 1px solid #CCA94C; border-radius: 5px; padding-left: 5px; padding-right: 5px; }
 #searchform #s:hover, #searchform #s:active, #searchform #s:focus { border-color: #999485; }
 #searchform #searchsubmit { width: 60px; height: 30px; margin-left: 10px; color: #FFF; background-color: #CCA94C; border: 0; border-radius: 5px; }
 #searchform #searchsubmit:hover { background-color: #999485; cursor: pointer; }
