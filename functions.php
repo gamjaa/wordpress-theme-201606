@@ -12,4 +12,8 @@ register_sidebar( array(
   'after_title' => '</h3>',
 ));
 add_theme_support( 'post-thumbnails' );
+function mytheme_custom_excerpt_length( $length ) {
+  return 80;
+}
+add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );
 ?>
