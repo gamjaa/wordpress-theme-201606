@@ -67,7 +67,8 @@ article a.more { width: 100px; line-height: 35px; margin-top: 20px; display: blo
 	background-color: #CCA94C; color: #FFF; text-align: center; }
 article a.more:hover { background-color: #999485; color: #FFF; }
 
-article p { text-indent: 10px; line-height: 1.8; margin: 20px 0 0 0; }
+#container p, article li { line-height: 1.8; }
+article p { text-indent: 10px; margin: 20px 0 0 0; }
 article img { max-width: 100%; height: auto; margin: auto; display: block; }
 article figure[class|="wp-block"] { margin-left: 10px; margin-right: 10px; }
 article figure.wp-embed-aspect-16-9 * { max-height: calc(100vw / 16 * 9); }
