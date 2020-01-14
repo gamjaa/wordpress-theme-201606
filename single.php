@@ -1,7 +1,7 @@
 <?= get_header() ?>
 <div id="container">
 	<div id="posts_wrapper">
-		<article>
+		<article class="post">
 			<header>
 				<h1><a href="<?= get_permalink() ?>" class="none_deco"><?= get_the_title() ?></a></h1>
 				<span class="category"><?php the_category(', '); ?> | </span>

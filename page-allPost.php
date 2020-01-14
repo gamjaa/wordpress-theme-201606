@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 <div id="container">
-	<article>
+	<article class="post">
 		<div id="title"><h1>전체 글</h1></div>
 		<?php echo do_shortcode("[catlist comments=yes date=yes date_tag=span pagination=yes numberposts=20 pagination_prev='«' pagination_next='»']");?>
 	</article><!-- content 끝 -->

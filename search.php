@@ -9,7 +9,7 @@
 		<small>검색 결과 총 <?= $total_results ?>건</small>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<article id="<?= get_the_ID() ?>">
+		<article id="<?= get_the_ID() ?>" class="post">
 			<header>
 				<h1><a href="<?= get_permalink() ?>" class="none_deco"><?= get_the_title() ?></a></h1>
 				<span class="category"><?php the_category(', '); ?> | </span>
