@@ -15,8 +15,9 @@
 		<meta property="og:description" content="<?= is_single() ? wp_strip_all_tags(get_the_excerpt()) : get_bloginfo('description'); ?>">
 		<meta property="og:url" content="<?= is_single() ? get_the_permalink() : '' ?>">
 		<meta property="og:type" content="<?= is_single() ? 'article' : 'website' ?>">
-		<meta property="og:image" content="<?= is_single() && has_post_thumbnail() ? get_the_post_thumbnail_url() : get_site_icon_url() ?>">
-		<meta name="twitter:card" content="summary">
+		<meta property="og:image" content="<?= is_single() && has_post_thumbnail() ? get_the_post_thumbnail_url() : wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) , 'full' )[0] ?>">
+		<meta property="og:site_name" content="<?= get_bloginfo('name') ?>">
+		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:creator" content="@_gamjaa">
 		<meta name="twitter:site" content="@_gamjaa">
 
