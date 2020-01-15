@@ -19,9 +19,19 @@ if (empty($post)) {
 if (has_post_thumbnail($post)) {
     $thumb_url = get_the_post_thumbnail_url($post, 'medium_large');
     $img = imagecreatefromstring(file_get_contents($thumb_url));
+} else if (get_background_image() != '') {
+    $img = imagecreatefromstring(file_get_contents(get_background_image()));
 } else {
     $img = imagecreatetruecolor(560, 315);
-    $backgroundColor = imagecolorallocate($img, 204, 169, 76);
+
+    function hexColorAllocate($im,$hex){
+        $hex = ltrim($hex,'#');
+        $a = hexdec(substr($hex,0,2));
+        $b = hexdec(substr($hex,2,2));
+        $c = hexdec(substr($hex,4,2));
+        return imagecolorallocate($im, $a, $b, $c); 
+    }    
+    $backgroundColor = hexColorAllocate($img, get_background_color());
     imagefill($img, 0, 0, $backgroundColor);
 }
 
