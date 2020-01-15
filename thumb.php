@@ -16,11 +16,13 @@ if (empty($post)) {
     return;
 }
 
+$options = get_option( 'auto_thumb_settings' );
+
 if (has_post_thumbnail($post)) {
     $thumb_url = get_the_post_thumbnail_url($post, 'medium_large');
     $img = imagecreatefromstring(file_get_contents($thumb_url));
-} else if (get_background_image() != '') {
-    $img = imagecreatefromstring(file_get_contents(get_background_image()));
+} else if ($options['auto_thumb_background_image']) {
+    $img = imagecreatefromstring(file_get_contents($options['auto_thumb_background_image']));
 } else {
     $img = imagecreatetruecolor(560, 315);
 
@@ -31,7 +33,7 @@ if (has_post_thumbnail($post)) {
         $c = hexdec(substr($hex,4,2));
         return imagecolorallocate($im, $a, $b, $c); 
     }    
-    $backgroundColor = hexColorAllocate($img, get_background_color());
+    $backgroundColor = hexColorAllocate($img, $options['auto_thumb_background_color'] ?: '#CCA94C');
     imagefill($img, 0, 0, $backgroundColor);
 }
 
