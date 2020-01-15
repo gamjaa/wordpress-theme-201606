@@ -84,14 +84,15 @@ pre code { padding: 10px; line-height: 1.8; overflow-x: auto; display: block; }
 
 #comment li { margin-bottom: 10px; }
 #comment a { color: #CCA94C; text-decoration: none; }
+#comment a:hover { color: #999485; }
 #comment a.comment_link { text-decoration: none; font-weight: bold; color: #999485; }
 #comment .commentlist { list-style: none; margin-left: -30px; }
 #comment .children { margin-top: 10px; margin-left: -10px; list-style-image: url('./images/iconmonstr-arrow-28-24.png'); }
 #comment .comment-author { color: #FFF; line-height: 32px; }
 #comment .avatar { border-radius: 50%; vertical-align: bottom; }
 #comment .fn { font-style: normal; font-weight: bold; color: #0D0D0D; }
-#comment .fn a { color: #999485; }
-#comment .comment-meta a { font-size: 14px; }
+#comment .fn a { text-decoration: underline; }
+#comment .comment-metadata a { font-size: 14px; }
 
 #commentform {
 	background-color: #B8FFFD;
@@ -106,7 +107,7 @@ pre code { padding: 10px; line-height: 1.8; overflow-x: auto; display: block; }
 	display: table-row;
 	align-items: center;
 }
-p[class="comment-notes"] {
+p.comment-notes {
 	width: 100%;
 	text-align: right;
 	font-size: 12px;
@@ -199,4 +200,4 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .roundborder img {width: auto; height: 80%; border-radius: 50%;}
 
 a.none_deco { text-decoration: none; }
-input[type=submit], button { -webkit-appearance: none; }
+input, textarea, button { -webkit-appearance: none; }
