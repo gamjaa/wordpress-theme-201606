@@ -1,18 +1,4 @@
 <?= get_header() ?>
-<script>
-	function setThumbPosition(img) {
-		if (img.height > 300) {
-			img.style.marginTop = `-${img.height / 2 - 150}px`;
-		}
-	}
-
-	window.onload = () => {
-		const pageNumbers = document.getElementsByClassName('page-numbers');
-		for (let i = 1; i < pageNumbers.length; i++) {
-			pageNumbers[i].style.lineHeight = `${pageNumbers[i].clientHeight}px`;
-		}
-	}
-</script>
 <div id="container">
 	<div id="posts_wrapper">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -21,12 +7,6 @@
 				<h1><a href="<?= get_permalink() ?>" class="none_deco"><?= get_the_title() ?></a></h1>
 				<span class="category"><?php the_category(', '); ?> | </span>
 				<span class="date"><?= get_the_date(); ?> <?= get_the_time(); ?></span>
-
-				<?php if (has_post_thumbnail()) : ?>
-					<a href="<?= get_permalink() ?>" title="<?= get_the_title() ?>" class="thumb">
-						<img src="<?= get_the_post_thumbnail_url(null, 'medium_large'); ?>" class="thumb_img" onload="setThumbPosition(this)">
-					</a>
-				<?php endif; ?>
 			</header>
 
 			<a href="<?= get_permalink() ?>" title="계속 읽기" class="none_deco"><?php the_excerpt(); ?></a>
