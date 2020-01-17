@@ -17,8 +17,8 @@
   add_theme_support( 'automatic-feed-links' );	
   add_theme_support( 'title-tag' );
 
-  // 요약문 길이 80단어
-  add_filter( 'excerpt_length', function ( $length ) { return 80; } );
+  // RSS 피드 description에 전체 내용 넣기
+  add_filter( 'the_excerpt_rss', 'the_content' );
 
   // 섬네일 자동 생성 설정 페이지
   add_action( 'admin_menu', 'auto_thumb_add_admin_menu' );
