@@ -118,9 +118,9 @@
       // Use nonce for verification
       wp_nonce_field( 'auto_thumb_checkbox_field_nonce', 'auto_thumb_checkbox_noncename' );
 
-      $saved = get_post_meta( $post->ID, 'disable_auto_thumb' );
+      $saved = get_post_meta( $post->ID, 'disable_auto_thumb', true );
 
-      echo '<input type="checkbox" name="disable_auto_thumb" value="1" id="disable_auto_thumb" '.checked(1, $saved, false).'/>'.'<label for="disable_auto_thumb">섬네일 자동 생성 끄기</label>';
+      echo '<input type="checkbox" name="disable_auto_thumb" value="1" id="disable_auto_thumb" '.checked($saved, 1, false).'/>'.'<label for="disable_auto_thumb">섬네일 자동 생성 끄기</label>';
   }
 
   function auto_thumb_checkbox_save( $post_id ) 
