@@ -86,6 +86,7 @@
 				const resizeListener = () => {
 					if (window.innerWidth <= 880) {
 						pEl.parentNode.insertBefore(contentAdEl, pEl.nextSibling);
+						(adsbygoogle = window.adsbygoogle || []).push({});
 						
 						window.removeEventListener('resize', resizeListener);
 					}
