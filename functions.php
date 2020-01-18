@@ -21,109 +21,111 @@
   add_filter( 'the_excerpt_rss', 'the_content' );
 
   // 섬네일 자동 생성 설정 페이지
-  add_action( 'admin_menu', 'auto_thumb_add_admin_menu' );
-  add_action( 'admin_init', 'auto_thumb_settings_init' );
+  add_action( 'admin_menu', 'gamjaa_post_options_add_admin_menu' );
+  add_action( 'admin_init', 'gamjaa_post_options_init' );
 
-  function auto_thumb_add_admin_menu(  ) { 
-    add_options_page( '섬네일 자동 생성', '섬네일 자동 생성', 'manage_options', 'auto_thumb_generator', 'auto_thumb_options_page' );
+  function gamjaa_post_options_add_admin_menu(  ) { 
+    add_options_page( '섬네일 자동 생성', '섬네일 자동 생성', 'manage_options', 'gamjaa_post_options', 'gamjaa_post_options_page' );
   }
 
-  function auto_thumb_settings_init(  ) { 
-    register_setting( 'auto_thumb', 'auto_thumb_settings' );
+  function gamjaa_post_options_init(  ) { 
+    register_setting( 'gamjaa_post_options_grp', 'gamjaa_post_options' );
 
     add_settings_section(
-      'auto_thumb_setting_section', 
+      'gamjaa_post_options_section', 
       '섬네일 자동 생성 설정', 
-      'auto_thumb_settings_section_callback', 
-      'auto_thumb'
+      'gamjaa_post_options_section_callback', 
+      'gamjaa_post_options_grp'
     );
 
     add_settings_field( 
       'auto_thumb_default', 
       '오픈그래프 기본 이미지 URL(포스트 제외한 페이지에서 출력)', 
       'auto_thumb_default_render', 
-      'auto_thumb', 
-      'auto_thumb_setting_section' 
+      'gamjaa_post_options_grp', 
+      'gamjaa_post_options_section' 
     );
 
     add_settings_field( 
       'auto_thumb_background_image', 
       '오픈그래프 자동 생성 섬네일 배경 이미지 URL(해당 이미지에 글 제목 합성해 출력)', 
       'auto_thumb_background_image_render', 
-      'auto_thumb', 
-      'auto_thumb_setting_section' 
+      'gamjaa_post_options_grp', 
+      'gamjaa_post_options_section' 
     );
 
     add_settings_field( 
       'auto_thumb_background_color', 
       '오픈그래프 자동 생성 섬네일 배경색 코드(배경 이미지 없을 때 사용)', 
       'auto_thumb_background_color_render', 
-      'auto_thumb', 
-      'auto_thumb_setting_section' 
+      'gamjaa_post_options_grp', 
+      'gamjaa_post_options_section' 
     );
   }
 
   function auto_thumb_default_render(  ) { 
-    $options = get_option( 'auto_thumb_settings' );
+    $options = get_option( 'gamjaa_post_options' );
 ?>
-    <input type='url' name='auto_thumb_settings[auto_thumb_default]' value='<?= $options['auto_thumb_default'] ?>'>
+    <input type='url' name='gamjaa_post_options[auto_thumb_default]' value='<?= $options['auto_thumb_default'] ?>'>
 <?php
   }
 
   function auto_thumb_background_color_render(  ) { 
-    $options = get_option( 'auto_thumb_settings' );
+    $options = get_option( 'gamjaa_post_options' );
 ?>
-    <input type='text' name='auto_thumb_settings[auto_thumb_background_color]' placeholder='#CCA94C' value='<?= $options['auto_thumb_background_color'] ?>'>
+    <input type='text' name='gamjaa_post_options[auto_thumb_background_color]' placeholder='#CCA94C' value='<?= $options['auto_thumb_background_color'] ?>'>
 <?php
   }
 
   function auto_thumb_background_image_render(  ) { 
-    $options = get_option( 'auto_thumb_settings' );
+    $options = get_option( 'gamjaa_post_options' );
 ?>
-    <input type='url' name='auto_thumb_settings[auto_thumb_background_image]' value='<?= $options['auto_thumb_background_image'] ?>'>
+    <input type='url' name='gamjaa_post_options[auto_thumb_background_image]' value='<?= $options['auto_thumb_background_image'] ?>'>
 <?php
   }
 
-  function auto_thumb_settings_section_callback(  ) { 
+  function gamjaa_post_options_section_callback(  ) { 
     echo '포스트 섬네일 자동 생성 설정 페이지';
   }
 
-  function auto_thumb_options_page(  ) { 
+  function gamjaa_post_options_page(  ) { 
 ?>
       <form action='options.php' method='post'>
 <?php
-          settings_fields( 'auto_thumb' );
-          do_settings_sections( 'auto_thumb' );
+          settings_fields( 'gamjaa_post_options_grp' );
+          do_settings_sections( 'gamjaa_post_options_grp' );
           submit_button();
 ?>
       </form>
 <?php
   }
 
-  // 포스트 별 섬네일 자동 생성 기능 끄기
+  // 포스트 별 섬네일 자동 생성 / 광고 출력 설정
   add_action( 'add_meta_boxes', function() {
     add_meta_box( 
-      'auto_thumb_checkbox',
-      '섬네일 자동 생성 설정',
-      'auto_thumb_checkbox_callback',
+      'gamjaa_post_options_grp',
+      '섬네일 자동 생성 / 광고 출력',
+      'gamjaa_post_options_callback',
       'post',
       'side'
     );
   } );
 
-  add_action( 'save_post', 'auto_thumb_checkbox_save' );
+  add_action( 'save_post', 'gamjaa_post_options_save' );
 
-  function auto_thumb_checkbox_callback( $post )
+  function gamjaa_post_options_callback( $post )
   {
       // Use nonce for verification
-      wp_nonce_field( 'auto_thumb_checkbox_field_nonce', 'auto_thumb_checkbox_noncename' );
+      wp_nonce_field( 'gamjaa_post_options_fields_nonce', 'gamjaa_post_options_noncename' );
 
-      $saved = get_post_meta( $post->ID, 'disable_auto_thumb', true );
+      $current_disable_auto_thumb = get_post_meta( $post->ID, 'disable_auto_thumb', true );
+      $current_include_ads = get_post_meta( $post->ID, 'include_ads', true );
 
-      echo '<input type="checkbox" name="disable_auto_thumb" value="1" id="disable_auto_thumb" '.checked($saved, 1, false).'/>'.'<label for="disable_auto_thumb">섬네일 자동 생성 끄기</label>';
+      echo '<input type="checkbox" name="disable_auto_thumb" value="1" id="disable_auto_thumb" '.checked($current_disable_auto_thumb, 1, false).'/>'.'<label for="disable_auto_thumb">섬네일 자동 생성 끄기</label><br>'
+      .'<input type="checkbox" name="include_ads" value="1" id="include_ads" '.checked($current_include_ads, 1, false).'/>'.'<label for="include_ads">광고 표시 하기</label>';
   }
 
-  function auto_thumb_checkbox_save( $post_id ) 
+  function gamjaa_post_options_save( $post_id ) 
   {
         // verify if this is an auto save routine. 
         // If it is our form has not been submitted, so we dont want to do anything
@@ -132,13 +134,19 @@
 
         // verify this came from the our screen and with proper authorization,
         // because save_post can be triggered at other times
-        if ( !wp_verify_nonce( $_POST['auto_thumb_checkbox_noncename'], 'auto_thumb_checkbox_field_nonce' ) )
+        if ( !wp_verify_nonce( $_POST['gamjaa_post_options_noncename'], 'gamjaa_post_options_fields_nonce' ) )
             return;
 
         if ( isset($_POST['disable_auto_thumb']) && $_POST['disable_auto_thumb'] != "" ){
           update_post_meta( $post_id, 'disable_auto_thumb', $_POST['disable_auto_thumb'] );
         } else {
           delete_post_meta( $post_id, 'disable_auto_thumb' );
+        }
+
+        if ( isset($_POST['include_ads']) && $_POST['include_ads'] != "" ){
+          update_post_meta( $post_id, 'include_ads', $_POST['include_ads'] );
+        } else {
+          delete_post_meta( $post_id, 'include_ads' );
         }
   }
 ?>

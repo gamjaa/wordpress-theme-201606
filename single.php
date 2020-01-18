@@ -9,7 +9,25 @@
 			</header>
 			
 			<?php
+				$is_include_ads = get_post_meta($post->ID, 'include_ads');
+				
 				the_content();
+				
+				// 콘텐츠 끝 광고
+				if ($is_include_ads) {
+			?>
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+						style="display:block; text-align:center;"
+						data-ad-layout="in-article"
+						data-ad-format="fluid"
+						data-ad-client="ca-pub-9422978281782094"
+						data-ad-slot="4457132838"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+			<?php
+				}
 				
 				the_tags('<span id="tag">태그 : ', ', ', '</span>');
 			?>
@@ -22,9 +40,60 @@
 	</div>
 
 	<nav>
-		<?php dynamic_sidebar(); ?>
+		<?php 
+			dynamic_sidebar();
 
-		<?php if (function_exists ('adinserter')) echo adinserter (2); ?>
+			// 사이드 바 광고
+			if ($is_include_ads) {
+		?>
+				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<ins class="adsbygoogle"
+					style="display:block"
+					data-ad-client="ca-pub-9422978281782094"
+					data-ad-slot="1450533311"
+					data-ad-format="auto"
+					data-full-width-responsive="true"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+		<?php
+			}
+		?>
 	</nav>
 </div>
+<?php
+	// 콘텐츠 중간 광고(너비 880px 이하)
+	if ($is_include_ads) {
+		$content_ad_code = base64_encode('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle mobile_ad"
+			style="text-align:center;"
+			data-ad-layout="in-article"
+			data-ad-format="fluid"
+			data-ad-client="ca-pub-9422978281782094"
+			data-ad-slot="4371113752"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>');
+?>
+		<script>
+			const contentAdEl = document.createElement('div');
+			contentAdEl.innerHTML = window.atob('<?= $content_ad_code ?>');
+			const pEl = document.querySelectorAll('article > p')[1];
+
+			if (window.innerWidth <= 880) {
+				pEl.parentNode.insertBefore(contentAdEl, pEl.nextSibling);
+			} else {
+				const resizeListener = () => {
+					if (window.innerWidth <= 880) {
+						pEl.parentNode.insertBefore(contentAdEl, pEl.nextSibling);
+						
+						window.removeEventListener('resize', resizeListener);
+					}
+				};
+				window.addEventListener('resize', resizeListener);
+			}			
+		</script>
+<?php
+	}
+?>
 <?= get_footer() ?>

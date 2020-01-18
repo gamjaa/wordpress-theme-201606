@@ -18,14 +18,14 @@
 		<meta property="og:image" content="<?= is_single() ? 
 			get_post_meta($post->ID, 'disable_auto_thumb') ? 
 				get_the_post_thumbnail_url($post) : get_template_directory_uri().'/thumb.php?post_id='.get_the_ID() 
-				: get_option( 'auto_thumb_settings' )['auto_thumb_default'] ?: get_site_icon_url() ?>">
+				: get_option( 'gamjaa_post_options' )['auto_thumb_default'] ?: get_site_icon_url() ?>">
 		<meta property="og:site_name" content="<?= get_bloginfo('name') ?>">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:creator" content="@_gamjaa">
 		<meta name="twitter:site" content="@_gamjaa">
 
 		<link rel="canonical" href="<?= is_single() ? get_the_permalink() : '' ?>">
-		<link rel="stylesheet" href="<?= get_bloginfo('stylesheet_url') ?>?ver=20200115">
+		<link rel="stylesheet" href="<?= get_bloginfo('stylesheet_url') ?>?ver=20200118">
 		<?php wp_site_icon() ?>
 		
 		<?php wp_head() ?>

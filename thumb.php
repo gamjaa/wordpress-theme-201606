@@ -16,7 +16,7 @@ if (empty($post)) {
     return;
 }
 
-$options = get_option( 'auto_thumb_settings' );
+$options = get_option( 'gamjaa_post_options' );
 
 if (has_post_thumbnail($post)) {
     $thumb_url = get_the_post_thumbnail_url($post, 'medium_large');
