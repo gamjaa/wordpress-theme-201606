@@ -72,7 +72,7 @@ body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 
 .post img { max-width: 100%; height: auto; margin: auto; display: block; }
 .post figure[class|="wp-block"] { margin-left: 10px; margin-right: 10px; }
 .post figure.wp-embed-aspect-16-9 * { max-height: calc(100vw / 16 * 9); }
-.post .wp-caption { width: 100% !important; }
+.post .wp-caption { width: 100% !important; margin-left: 0; margin-right: 0; }
 .post .wp-caption-text, figcaption { text-align: center; text-indent: 0; color: #999; }
 .post iframe { max-width: 100%; }
 .post hr { border-style: none none dotted; border-width: 2px; border-color: #999; }
