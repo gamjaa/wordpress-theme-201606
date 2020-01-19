@@ -34,10 +34,10 @@ body > footer { text-align: center; }
 body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 15px; }
 
 #container { max-width: 1070px; display: flex; margin: auto; }
-#posts_wrapper { flex: 1; margin-left: 10px; margin-right: 10px; margin-bottom: 30px; }
+#posts_wrapper { flex: 1; min-width: 0; margin-left: 10px; margin-right: 10px; margin-bottom: 30px; }
 @media (max-width: 880px) {
 	#container { flex-direction: column; }
-	nav { margin-left: 20px; margin-right: 20px; box-sizing: border-box; }
+	nav { margin-left: 20px; margin-right: 20px; box-sizing: border-box; margin-bottom: 30px; }
 	.mobile_ad { display: block; }
 }
 @media (min-width: 881px) {
@@ -97,7 +97,6 @@ pre code { padding: 10px; line-height: 1.8; overflow-x: auto; display: block; }
 #commentform {
 	background-color: #B8FFFD;
 	border-radius: 20px;
-	margin-bottom: 30px;
 	padding: 10px 20px 10px;
 	display: block;
 	box-sizing: border-box;

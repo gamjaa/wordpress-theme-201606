@@ -82,6 +82,7 @@
 
 			if (window.innerWidth <= 880) {
 				pEl.parentNode.insertBefore(contentAdEl, pEl.nextSibling);
+				(adsbygoogle = window.adsbygoogle || []).push({});
 			} else {
 				const resizeListener = () => {
 					if (window.innerWidth <= 880) {
@@ -92,7 +93,7 @@
 					}
 				};
 				window.addEventListener('resize', resizeListener);
-			}			
+			}
 		</script>
 <?php
 	}
