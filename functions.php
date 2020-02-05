@@ -17,6 +17,28 @@
   add_theme_support( 'automatic-feed-links' );	
   add_theme_support( 'title-tag' );
 
+  // RSS 피드 사이트 아이콘 크기 변경
+  function rss2_site_icon_512() {
+    $rss_title = get_wp_title_rss();
+    if ( empty( $rss_title ) ) {
+      $rss_title = get_bloginfo_rss( 'name' );
+    }
+  
+    $url = get_site_icon_url(512);
+    if ( $url ) {
+      echo '
+<image>
+  <url>' . convert_chars( $url ) . '</url>
+  <title>' . $rss_title . '</title>
+  <link>' . get_bloginfo_rss( 'url' ) . '</link>
+  <width>512</width>
+  <height>512</height>
+</image> ' . "\n";
+    }
+  }
+  remove_action( 'rss2_head', 'rss2_site_icon' );
+  add_action( 'rss2_head', 'rss2_site_icon_512' );
+
   // RSS 피드 description에 전체 내용 넣기
   add_filter( 'the_excerpt_rss', 'the_content' );
 
