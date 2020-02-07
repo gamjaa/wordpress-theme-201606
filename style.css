@@ -144,7 +144,8 @@ p[class|="comment"] > input:hover, p[class|="comment"] > textarea:hover { border
 	border-radius: 5px;
 	font-size: 16px;
 }
-#commentform #submit:hover { background-color: #999485; cursor: pointer; }
+#commentform #submit:disabled { background-color: #999; }
+#commentform #submit:hover:enabled { background-color: #999485; cursor: pointer; }
 
 /* 페이지 버튼 */
 #pagination ul { max-width: 100%; padding: 0; list-style: none; text-align: center; cursor: default; }
