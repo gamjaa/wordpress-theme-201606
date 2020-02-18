@@ -2,6 +2,15 @@
 <!doctype html>
 <html lang="ko">
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41331721-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-41331721-1');
+		</script>
 		<meta charset="UTF-8">
 		<?= is_allow_robots() ? '' : "<meta name='robots' content='noindex,follow' />\n" ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
