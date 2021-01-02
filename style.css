@@ -40,7 +40,9 @@ Text Domain: gamjaa
 /* 기본 레이아웃 */
 body, input, textarea { margin: 0; background-color: var(--main-background-color);
     font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", "나눔고딕", "NanumGothic", sans-serif;
-	font-size: 17px; color: var(--main-text-color);}
+	font-size: 17px; color: var(--main-text-color);
+	-webkit-text-size-adjust: none;
+}
 	
 body > header { text-align: center; overflow: hidden; }
 body > header ul { padding: 0; list-style: none; }
