@@ -41,7 +41,9 @@ Text Domain: gamjaa
 body, input, textarea { margin: 0; background-color: var(--main-background-color);
     font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", "나눔고딕", "NanumGothic", sans-serif;
 	font-size: 17px; color: var(--main-text-color);
-	-webkit-text-size-adjust: none;
+	-webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 	
 body > header { text-align: center; overflow: hidden; }
