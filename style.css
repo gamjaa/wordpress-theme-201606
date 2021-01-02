@@ -111,18 +111,21 @@ pre code { padding: 10px; line-height: 1.8; overflow-x: auto; display: block; }
 
 #tag { color: var(--menu-active-text-color); font-size: 14px; margin-top: 20px; display: inline-block; }
 
-#comment li { margin-bottom: 10px; }
 #comment a { color: var(--theme-color); text-decoration: none; }
 #comment a:hover { color: var(--menu-active-text-color); }
 #comment a.comment_link { text-decoration: none; font-weight: bold; color: var(--menu-active-text-color); }
 #comment .commentlist { list-style: none; margin-left: -30px; }
-#comment .children { margin-top: 10px; margin-left: -10px; list-style-image: url('./images/iconmonstr-arrow-28-24.png'); }
-#comment .comment-author { line-height: 32px; }
+#comment .children { margin-top: 10px; list-style-image: url('./images/iconmonstr-arrow-28-24.png'); }
+#comment .comment-author { line-height: 32px; display: inline-block; }
+#comment .comment-metadata { display: inline-block; }
+#comment .comment-metadata a { font-size: 14px; }
 #comment span.says { display: none; }
+#comment article {margin-bottom: 10px; padding: 10px; border-radius: 20px;}
+#comment li.bypostauthor article { background: var(--widget-background-color); }
+#comment .comment-content p {margin-top: 10px; margin-bottom: 10px;}
 #comment .avatar { border-radius: 50%; vertical-align: bottom; }
 #comment .fn { font-style: normal; font-weight: bold; color: var(--header-menu-line-color); }
 #comment .fn a { text-decoration: underline; }
-#comment .comment-metadata a { font-size: 14px; }
 
 #commentform {
 	background-color: var(--widget-background-color);
