@@ -34,7 +34,7 @@
 		<meta name="twitter:site" content="@_gamjaa">
 
 		<link rel="canonical" href="<?= is_single() ? get_the_permalink() : '' ?>">
-		<link rel="stylesheet" href="<?= get_bloginfo('stylesheet_url') ?>?ver=20200207">
+		<link rel="stylesheet" href="<?= get_bloginfo('stylesheet_url') ?>?ver=20210102">
 		<?php wp_site_icon() ?>
 		
 		<?php wp_head() ?>
