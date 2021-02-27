@@ -6,6 +6,7 @@
   // Sidebar
   register_sidebar( array(
     'name' => __( 'Sidebar' ),
+    'id' => 'sidebar',
     'before_widget' => '<div class="widget">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
@@ -156,7 +157,8 @@
 
         // verify this came from the our screen and with proper authorization,
         // because save_post can be triggered at other times
-        if ( !wp_verify_nonce( $_POST['gamjaa_post_options_noncename'], 'gamjaa_post_options_fields_nonce' ) )
+        $noncename = 'gamjaa_post_options_noncename';
+        if ( !isset($_POST[$noncename]) || !wp_verify_nonce( $_POST[$noncename], 'gamjaa_post_options_fields_nonce' ) )
             return;
 
         if ( isset($_POST['disable_auto_thumb']) && $_POST['disable_auto_thumb'] != "" ){
