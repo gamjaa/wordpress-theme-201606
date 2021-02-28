@@ -41,7 +41,7 @@
 
 	<nav>
 		<?php 
-			dynamic_sidebar();
+			dynamic_sidebar('sidebar');
 
 			// 사이드 바 광고
 			if ($is_include_ads) {

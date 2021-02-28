@@ -47,7 +47,7 @@
 	</div>
 
 	<nav>
-		<?php dynamic_sidebar(); ?>
+		<?php dynamic_sidebar('sidebar'); ?>
 	</nav>
 </div>
 <?= get_footer() ?>
