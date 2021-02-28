@@ -61,7 +61,7 @@
 	</div>
 
 	<nav>
-		<?php dynamic_sidebar(); ?>
+		<?php dynamic_sidebar('sidebar'); ?>
 	</nav>
 </div>
 <?php get_footer(); ?>
