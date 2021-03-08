@@ -80,7 +80,7 @@ body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 
 	text-align: left; 
 	padding-top: 20px; padding-bottom: 20px; 
 }
-.post a { color: var(--theme-color); }
+.post a { color: var(--theme-color); word-break: break-word; }
 .post a:hover { color: var(--menu-active-text-color); }
 .post a.none_deco { color: inherit; text-decoration: none; }
 .post a.none_deco:hover { color: var(--menu-active-text-color); }
@@ -106,7 +106,7 @@ body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 
 .post iframe { max-width: 100%; }
 .post hr { border-style: none none dotted; border-width: 2px; border-color: var(--gray-text-color); }
 .post code { font-family: Consolas, Verdana, 'Droid Sans Mono', D2Coding, NanumGothicCoding, '돋움체', sans-serif; background-color: #23282d; color: #EEE; 
-	box-sizing: border-box; border-radius: 5px; padding: 3px; font-size: 17px; text-indent: 0;}
+	box-sizing: border-box; border-radius: 5px; padding: 3px; font-size: 17px; text-indent: 0; word-break: break-word;}
 pre code { padding: 10px; line-height: 1.8; overflow-x: auto; display: block; }
 
 #tag { color: var(--menu-active-text-color); font-size: 14px; margin-top: 20px; display: inline-block; }
