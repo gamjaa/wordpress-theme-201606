@@ -231,6 +231,7 @@ img.alignright {float:right; margin:0 0 1em 1em}
 img.alignleft {float:left; margin:0 1em 1em 0}
 img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .roundborder img {width: auto; height: 80%; border-radius: 50%;}
+.cryptedmail:after { content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); }
 
 a.none_deco { text-decoration: none; }
 input, textarea, button { -webkit-appearance: none; }
