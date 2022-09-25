@@ -9,7 +9,12 @@
 				<span class="date"><?= get_the_date(); ?> <?= get_the_time(); ?></span>
 			</header>
 
-			<a href="<?= get_permalink() ?>" title="계속 읽기" class="none_deco"><?php the_excerpt(); ?></a>
+			<a href="<?= get_permalink() ?>" title="계속 읽기" class="none_deco">
+				<?php
+					the_post_thumbnail();
+					the_excerpt();
+				?>
+			</a>
 
 			<a href="<?= get_permalink() ?>" class="more none_deco">계속 읽기</a>
 		</article>
