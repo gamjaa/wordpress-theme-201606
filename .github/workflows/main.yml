@@ -15,5 +15,5 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ${{ secrets.PATH }}
-          git reset --hard
-          git pull
+          git fetch
+          git reset --hard origin/master

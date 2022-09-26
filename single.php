@@ -64,19 +64,23 @@
 <?php
 	// 콘텐츠 중간 광고(너비 880px 이하)
 	if ($is_include_ads) {
-		$content_ad_code = base64_encode('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle mobile_ad"
-			style="text-align:center;"
-			data-ad-layout="in-article"
-			data-ad-format="fluid"
-			data-ad-client="ca-pub-9422978281782094"
-			data-ad-slot="4371113752"></ins>
-		<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>');
+		$content_ad_code = base64_encode('
+		<div>
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle mobile_ad"
+				style="text-align:center;"
+				data-ad-layout="in-article"
+				data-ad-format="fluid"
+				data-ad-client="ca-pub-9422978281782094"
+				data-ad-slot="4371113752"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>');
 ?>
 		<script>
 			const contentAdEl = document.createElement('div');
+			contentAdEl.style = 'margin-top: 20px; margin-bottom: 20px;';
 			contentAdEl.innerHTML = window.atob('<?= $content_ad_code ?>');
 			const pEl = document.querySelectorAll('article > p')[1];
 
