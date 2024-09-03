@@ -98,7 +98,7 @@ body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 
 
 #container p, .post li { line-height: 1.8; }
 .post p { text-indent: 10px; margin: 20px 0 0 0; }
-.post img { max-width: 100%; height: auto; margin: auto; display: block; }
+.post img { max-width: 100%; height: auto; margin: auto; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
 .post figure[class|="wp-block"] { margin-left: 10px; margin-right: 10px; }
 .post figure.wp-embed-aspect-16-9 * { max-height: calc(100vw / 16 * 9); }
 .post .wp-caption { width: 100% !important; margin-left: 0; margin-right: 0; }
