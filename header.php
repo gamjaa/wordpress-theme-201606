@@ -14,12 +14,12 @@
 		<?= is_allow_robots() ? '' : "<meta name='robots' content='noindex,follow' />\n" ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?= get_bloginfo('name') ?><?php wp_title('::') ?></title>
+		<title><?php wp_title('-', true, 'right'); ?><?php bloginfo('name'); ?></title>
 
-		<meta name="title" content="<?php if (is_single()) the_title(); else { bloginfo('name'); wp_title('::'); } ?>">
+		<meta name="title" content="<?php if (is_single()) the_title(); else { wp_title('-', true, 'right'); bloginfo('name'); } ?>">
 		<meta name="description" content="<?= is_single() ? wp_strip_all_tags(get_the_excerpt()) : get_bloginfo('description'); ?>">
 		<meta name="keywords" content="<?= is_single() ? tags2keywords() : '' ?>">
-		<meta property="og:title" content="<?php if (is_single()) the_title(); else { bloginfo('name'); wp_title('::'); } ?>">
+		<meta property="og:title" content="<?php if (is_single()) the_title(); else { wp_title('-', true, 'right'); bloginfo('name'); } ?>">
 		<meta property="og:description" content="<?= is_single() ? wp_strip_all_tags(get_the_excerpt()) : get_bloginfo('description'); ?>">
 		<meta property="og:url" content="<?= is_single() ? get_the_permalink() : '' ?>">
 		<meta property="og:type" content="<?= is_single() ? 'article' : 'website' ?>">
