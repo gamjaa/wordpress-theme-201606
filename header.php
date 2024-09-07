@@ -21,7 +21,7 @@
 		<meta name="keywords" content="<?= is_single() ? tags2keywords() : '' ?>">
 		<meta property="og:title" content="<?php if (is_single()) the_title(); else { bloginfo('name'); wp_title('::'); } ?>">
 		<meta property="og:description" content="<?= is_single() ? wp_strip_all_tags(get_the_excerpt()) : get_bloginfo('description'); ?>">
-		<meta property="og:url" content="<?= get_the_permalink() ?>">
+		<meta property="og:url" content="<?= is_single() ? get_the_permalink() : '' ?>">
 		<meta property="og:type" content="<?= is_single() ? 'article' : 'website' ?>">
 		<meta property="og:image" content="<?= is_single() ? 
 			(get_post_meta($post->ID, 'disable_auto_thumb') ? 
@@ -32,7 +32,7 @@
 		<meta name="twitter:creator" content="@_gamjaa">
 		<meta name="twitter:site" content="@_gamjaa">
 
-		<link rel="canonical" href="<?= get_the_permalink() ?>">
+		<link rel="canonical" href="<?= is_single() ? get_the_permalink() : '' ?>">
 		<link rel="stylesheet" href="<?= get_bloginfo('stylesheet_url') ?>?ver=20210308">
 		<?php wp_site_icon() ?>
 		
