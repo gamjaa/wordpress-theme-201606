@@ -16,6 +16,9 @@ if (empty($post)) {
     return;
 }
 
+// Trim title to prevent potential DoS attack from long strings.
+$post->post_title = mb_strimwidth($post->post_title, 0, 100, "...");
+
 $options = get_option( 'gamjaa_post_options' );
 
 if (has_post_thumbnail($post)) {

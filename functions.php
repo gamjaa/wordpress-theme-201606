@@ -56,7 +56,7 @@
 
     add_settings_section(
       'gamjaa_post_options_section', 
-      '섬네일 자동 생성 설정', 
+      '섬네일 자동 생성 설정',
       'gamjaa_post_options_section_callback', 
       'gamjaa_post_options_grp'
     );
@@ -89,21 +89,21 @@
   function auto_thumb_default_render(  ) { 
     $options = get_option( 'gamjaa_post_options' );
 ?>
-    <input type='url' name='gamjaa_post_options[auto_thumb_default]' value='<?= $options['auto_thumb_default'] ?>'>
+    <input type='url' name='gamjaa_post_options[auto_thumb_default]' value='<?= esc_attr($options['auto_thumb_default']) ?>'>
 <?php
   }
 
   function auto_thumb_background_color_render(  ) { 
     $options = get_option( 'gamjaa_post_options' );
 ?>
-    <input type='text' name='gamjaa_post_options[auto_thumb_background_color]' placeholder='#CCA94C' value='<?= $options['auto_thumb_background_color'] ?>'>
+    <input type='text' name='gamjaa_post_options[auto_thumb_background_color]' placeholder='#CCA94C' value='<?= esc_attr($options['auto_thumb_background_color']) ?>'>
 <?php
   }
 
   function auto_thumb_background_image_render(  ) { 
     $options = get_option( 'gamjaa_post_options' );
 ?>
-    <input type='url' name='gamjaa_post_options[auto_thumb_background_image]' value='<?= $options['auto_thumb_background_image'] ?>'>
+    <input type='url' name='gamjaa_post_options[auto_thumb_background_image]' value='<?= esc_attr($options['auto_thumb_background_image']) ?>'>
 <?php
   }
 
@@ -162,15 +162,57 @@
             return;
 
         if ( isset($_POST['disable_auto_thumb']) && $_POST['disable_auto_thumb'] != "" ){
-          update_post_meta( $post_id, 'disable_auto_thumb', $_POST['disable_auto_thumb'] );
+          update_post_meta( $post_id, 'disable_auto_thumb', sanitize_text_field($_POST['disable_auto_thumb']) );
         } else {
           delete_post_meta( $post_id, 'disable_auto_thumb' );
         }
 
         if ( isset($_POST['include_ads']) && $_POST['include_ads'] != "" ){
-          update_post_meta( $post_id, 'include_ads', $_POST['include_ads'] );
+          update_post_meta( $post_id, 'include_ads', sanitize_text_field($_POST['include_ads']) );
         } else {
           delete_post_meta( $post_id, 'include_ads' );
         }
   }
+
+function gamjaa_theme_scripts() {
+    // Google Analytics
+    $ga_id = 'G-MSPCPW3CW1'; // This could be an option in the future.
+    wp_enqueue_script( 'gtag', 'https://www.googletagmanager.com/gtag/js?id=' . $ga_id, array(), null, true );
+    $ga_code = "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '$ga_id');";
+    wp_add_inline_script( 'gtag', $ga_code );
+
+    // Main Stylesheet
+    wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+}
+add_action( 'wp_enqueue_scripts', 'gamjaa_theme_scripts' );
+
+function is_allow_robots() {
+    if ((is_home() || is_page()) && !is_paged()) {
+        return true;
+    }
+
+    if (is_single()) {
+        global $post;
+        $categories = get_the_category($post->ID);
+        // 카테고리가 일상으로만 설정돼있으면 로봇 차단
+        if (count($categories) == 1 && $categories[0]->term_id == 5) {
+            return false;
+        }
+
+        return true;
+    }
+
+    return false;
+}
+
+function tags2keywords() {
+    $tags = get_the_tags();
+    $keywords = '';
+    if ($tags) {
+        foreach ($tags as $tag) {
+            $keywords .= $tag->name . ',';
+        }
+    }
+    return $keywords;
+}
 ?>
