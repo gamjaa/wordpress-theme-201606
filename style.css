@@ -99,7 +99,7 @@ body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 
 .post a.more:hover { background-color: var(--menu-active-text-color); color: var(--button-text-color); }
 
 #container p, .post li { line-height: 1.8; }
-.post p { text-indent: 10px; margin: 20px 0 0 0; }
+.post p { text-indent: 10px; margin: 20px 0 0 0; text-align: justify; }
 .post img { max-width: 100%; height: auto; margin: auto; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
 .post figure[class|="wp-block"] { margin-top: 20px; margin-left: 10px; margin-right: 10px; }
 .post figure.wp-embed-aspect-16-9 * { max-height: calc(100vw / 16 * 9); }
@@ -110,7 +110,7 @@ body > footer img { max-width: 15%; width: 70px; height: auto; margin: 0 15px 0 
 .post pre { font-family: Consolas, Verdana, 'Droid Sans Mono', 'D2Coding ligature', D2Coding, NanumGothicCoding, '돋움체', sans-serif; background-color: #23282d; color: #EEE; 
 	box-sizing: border-box; border-radius: 5px; padding: 3px; font-size: 17px; text-indent: 0; word-break: break-word;}
 .post pre code { padding: 10px; line-height: 1.8; overflow-x: auto; display: block; }
-p > code { word-break: normal; }
+p > code { word-break: break-all; }
 
 #tag { color: var(--menu-active-text-color); font-size: 14px; margin-top: 20px; display: inline-block; }
 
