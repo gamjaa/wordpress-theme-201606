@@ -30,11 +30,29 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<header>
-			<?php
-				wp_nav_menu( array(
-				'theme_location' => 'main_menu',
-				'fallback_cb' => false,
-				));
-			?>
+			<div class="site-branding">
+				<?php
+				if ( has_custom_logo() ) {
+					the_custom_logo();
+				} else {
+					$site_title = get_bloginfo( 'name' );
+					$site_url = esc_url( home_url( '/' ) );
+					if ( is_front_page() && is_home() ) {
+						echo '<h1 class="site-title"><a href="' . $site_url . '" rel="home">' . $site_title . '</a></h1>';
+					} else {
+						echo '<p class="site-title"><a href="' . $site_url . '" rel="home">' . $site_title . '</a></p>';
+					}
+				}
+				?>
+			</div>
+			<nav class="main-navigation">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'main_menu',
+						'menu_class'     => 'main-menu',
+						'fallback_cb'    => false,
+					) );
+				?>
+			</nav>
 		</header>
 

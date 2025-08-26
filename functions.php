@@ -17,6 +17,7 @@
   add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
   add_theme_support( 'automatic-feed-links' );	
   add_theme_support( 'title-tag' );
+  add_theme_support( 'custom-logo' );
 
   // RSS 피드 사이트 아이콘 크기 변경
   function rss2_site_icon_512() {
