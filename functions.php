@@ -188,7 +188,7 @@ add_action( 'wp_enqueue_scripts', 'gamjaa_theme_scripts' );
 
 function add_cache_headers() {
   if (is_user_logged_in()) {
-    header('Cache-Control: no-cache, no-store, must-revalidate');
+    header('Cache-Control: no-cache, no-store, must-revalidate, private');
   } else {
     header('Cache-Control: no-cache, must-revalidate');
   }
