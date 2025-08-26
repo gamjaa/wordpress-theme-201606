@@ -186,6 +186,15 @@ function gamjaa_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gamjaa_theme_scripts' );
 
+function add_cache_headers() {
+  if (is_user_logged_in()) {
+    header('Cache-Control: no-cache, no-store, must-revalidate');
+  } else {
+    header('Cache-Control: no-cache, must-revalidate');
+  }
+}
+add_action( 'send_headers', 'add_cache_headers' );
+
 function is_allow_robots() {
     if ((is_home() || is_page()) && !is_paged()) {
         return true;
