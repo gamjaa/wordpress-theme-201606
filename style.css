@@ -155,7 +155,7 @@ body > footer img:hover {
 	#container {
 		flex-direction: column;
 	}
-	nav.sidebar {
+	#container > nav {
 		width: 100%;
 		margin: 0 0 30px 0;
 	}
@@ -164,9 +164,11 @@ body > footer img:hover {
 	}
 }
 @media (min-width: 881px) {
-	nav.sidebar {
+	#container > nav {
 		width: 250px;
+		max-width: 250px;
 		margin-left: 30px;
+		flex-shrink: 0;
 	}
 }
 
