@@ -351,6 +351,7 @@ body > footer img:hover {
 }
 #comment .comment-content p {
 	margin: 10px 0 0;
+	line-height: 1.8;
 }
 #comment .reply {
 	text-align: right;
