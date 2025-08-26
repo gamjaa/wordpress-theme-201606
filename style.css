@@ -307,9 +307,6 @@ body > footer img:hover {
 	margin-top: 20px;
 	display: inline-block;
 }
-#tag a {
-	margin-right: 10px;
-}
 
 /* --- 댓글 --- */
 #comment {
