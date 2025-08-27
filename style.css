@@ -162,6 +162,9 @@ body > footer img:hover {
 	main {
 		padding: 0;
 	}
+	.post p, .post li {
+		text-align: let;
+	}
 }
 @media (min-width: 881px) {
 	#container > nav {
@@ -169,6 +172,9 @@ body > footer img:hover {
 		max-width: 250px;
 		margin-left: 30px;
 		flex-shrink: 0;
+	}
+	.post p, .post li {
+		text-align: justify;
 	}
 }
 
@@ -178,7 +184,7 @@ body > footer img:hover {
 	margin-bottom: 40px;
 	border-bottom: 1px solid var(--border-color);
 	word-break: keep-all;
-	word-wrap: break-word;
+	overflow-wrap: break-word;
 }
 .post:last-child {
 	border-bottom: 0;
@@ -244,13 +250,13 @@ body > footer img:hover {
 
 .post p, .post li {
 	line-height: 1.8;
-	text-align: justify;
+	text-justify: inter-word;
 }
 .post p {
 	margin: 1.2em 0;
 }
 .post p code {
-	word-break: break-all;
+	
 }
 .post img {
 	max-width: 100%;
