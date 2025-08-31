@@ -256,7 +256,7 @@ body > footer img:hover {
 	margin: 1.2em 0;
 }
 .post p code {
-	
+	word-break: break-word;
 }
 .post img {
 	max-width: 100%;
@@ -268,6 +268,7 @@ body > footer img:hover {
 }
 .post figure {
 	margin: 20px 0;
+	max-width: 100%;
 }
 .post .wp-caption-text, .post figcaption {
 	text-align: center;
